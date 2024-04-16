@@ -7,7 +7,7 @@ function DogList( { dogs } ) {
 <h1>Choose a dog to learn more!</h1>
 {dogs.map(dog => (
 <div key={ dog.name }>
-<img src={ `./images/${dog.src}.jpg` } />
+<img src={ `../public/${dog.src}.jpg` } />
 <Link to={ `/dogs/${dog.name}`}>
 { dog.name }
 </Link>

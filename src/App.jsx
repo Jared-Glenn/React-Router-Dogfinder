@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import './App.css'
 
 import Nav from "./Nav";
@@ -9,11 +9,11 @@ function App( { dogs } ) {
   return (
 <Router>
 <Nav dogs={ dogs } />
-<Switch>
+<Routes>
 <Route path="/dogs/:dog" element={ <DogDetails dogs={ dogs } /> } />
 <Route path="/dogs" element= { <DogList dogs={ dogs } /> } />
 <Route path="*" element={ <Navigate to="/dogs" replace /> } />
-</Switch>
+</Routes>
 </Router>
   );
 }
@@ -22,7 +22,7 @@ App.defaultProps = { dogs: [
   { 
     name: "Whiskey", 
     age: 5, 
-    src: whiskey, 
+    src: "whiskey", 
     facts: [ 
       "Whiskey loves eating popcorn.", 
       "Whiskey is a terrible guard dog.", 
@@ -31,7 +31,7 @@ App.defaultProps = { dogs: [
     { 
       name: "Duke", 
       age: 3, 
-      src: duke, 
+      src: "duke", 
       facts: [ 
         "Duke believes that ball is life.", 
         "Duke likes snow.", 
@@ -40,7 +40,7 @@ App.defaultProps = { dogs: [
       { 
         name: "Perry", 
         age: 4, 
-        src: perry, 
+        src: "perry", 
         facts: [ 
           "Perry loves all humans.", 
           "Perry demolishes all snacks.", 
@@ -49,7 +49,7 @@ App.defaultProps = { dogs: [
         { 
           name: "Tubby", 
           age: 4, 
-          src: tubby, 
+          src: "tubby", 
           facts: [ 
             "Tubby is really stupid.", 
             "Tubby does not like walks.", 
